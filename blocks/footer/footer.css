@@ -1,47 +1,53 @@
 footer {
   background-color: #202020;
-  color:#ebebeb;
-  padding: 1px 0px 24px;
-  margin:48px 0 0;
+  color: #ebebeb;
+  padding: 1px 0 24px;
+  margin: 48px 0 0;
 
-  > .footer.block > div > .footer-nav {
-
-
-    > .default-content-wrapper > p  picture > img{
-      float:left;
+  >.footer.block>div>.footer-nav {
+    >.default-content-wrapper>p picture>img {
+      float: left;
       width: 140px;
-      height:auto;
-      margin-bottom: 0px;
-      margin-top: 0px;
+      height: auto;
+      margin-bottom: 0;
+      margin-top: 0;
       max-width: 8rem;
-      padding: 0px 40px;
+      padding: 0 40px;
+
       /* padding-left:40px; */
     }
 
-    > .default-content-wrapper > ul {
+    a:link,
+    a:visited {
+      color: #ebebeb;
+      text-decoration: underline;
+    }
+
+    >.default-content-wrapper>ul {
       display: flex;
-      flex: 1 1 1; 
+      flex: 1 1 1px;
       flex-direction: column;
-      margin:0;
-      > li {
+      margin: 0;
+
+      >li {
         list-style: none;
         display: inline-block;
         padding: 15px 17px;
         font-size: 12px;
 
-        > a {
+        >a {
           color: #ebebeb;
         }
 
-        > a:link {
+        >a:link {
           text-decoration: none;
         }
 
-        > a:active {
+        >a:active {
           text-decoration: underline !important;
         }
 
-        > a:hover {
+        >a:hover {
           text-decoration: underline;
         }
 
@@ -50,7 +56,8 @@ footer {
       @media (width>=1024px) {
         flex-direction: row;
       }
-      @media(width>=768px){
+
+      @media(width>=768px) {
         padding: 0 40px;
       }
 
@@ -58,38 +65,30 @@ footer {
 
   }
 
-  > .footer.block > div > .blank-space{
+  >.footer.block>div>.blank-space {
     display: block;
-    padding:0 0px;
+    padding: 0;
   }
 
-  > .footer.block > div > .footer-text {
-    padding:0 14px; 
+  >.footer.block>div>.footer-text {
+    padding: 0 14px;
 
-    a:link, a:visited {
-      color:#ebebeb;
-      text-decoration: underline;
-    }
-
-    > .default-content-wrapper > p:first-of-type {
-      font-size:12px;
-      margin: 40px 0 13.5px;
-      padding:0 40px;
-      line-height: 1.2;
-      text-align: justify;
-
-    
-    }
-
-    > .default-content-wrapper > p {
-      font-size:12px;
+    >.default-content-wrapper>p {
+      font-size: 12px;
       margin: 0 0 13.5px;
-      padding:0 40px;
+      padding: 0 40px;
       line-height: 1.2;
       text-align: justify;
-    
     }
 
-  }
+    >.default-content-wrapper>p:first-of-type {
+      font-size: 12px;
+      margin: 40px 0 13.5px;
+      padding: 0 40px;
+      line-height: 1.2;
+      text-align: justify;
 
+
+    }
+  }
 }

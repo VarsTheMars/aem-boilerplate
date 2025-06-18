@@ -1,3 +1,5 @@
+/* eslint-disable eqeqeq */
+
 import { getMetadata } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
 
@@ -19,7 +21,7 @@ export default async function decorate(block) {
   let index = 0;
   while (fragment.firstElementChild) {
     fragment.firstElementChild.classList.add(footerClasses[index]);
-    footerDivContainer.append(fragment.firstElementChild)
+    footerDivContainer.append(fragment.firstElementChild);
     if (index == 0) {
       footerDivContainer.append(footerDivSpace);
     }

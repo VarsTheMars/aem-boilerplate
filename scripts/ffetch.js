@@ -13,7 +13,9 @@
 /* eslint-disable no-restricted-syntax,  no-await-in-loop */
 
 async function* request(url, context) {
-  const { chunkSize, sheetName, fetch, fallbackUrl } = context;
+  const {
+    chunkSize, sheetName, fetch, fallbackUrl,
+  } = context;
   for (let offset = 0, total = Infinity; offset < total; offset += chunkSize) {
     const params = new URLSearchParams(`offset=${offset}&limit=${chunkSize}`);
     if (sheetName) params.append('sheet', sheetName);
@@ -184,7 +186,9 @@ export default function ffetch(url, fallbackUrl) {
     /* ignore */
   }
 
-  const context = { chunkSize, fetch, parseHtml, fallbackUrl };
+  const context = {
+    chunkSize, fetch, parseHtml, fallbackUrl,
+  };
   const generator = request(url, context);
 
   return assignOperations(generator, context);

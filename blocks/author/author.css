@@ -1,7 +1,10 @@
+/* stylelint-disable custom-property-pattern */
+
 .author-wrapper {
     padding: 10px;
     justify-content: space-between;
     padding-bottom:40px;
+
     >div>div {
         display: flex;
         flex-wrap: wrap;
@@ -34,7 +37,8 @@
  
         >div:last-child {
             width: 100%;
-            @media(min-width: 700px){
+
+            @media(width >= 700px){
                 width:auto;
             margin-left: 300px;
             margin-top: -20px;}
@@ -46,7 +50,7 @@
                     all: unset;
                     color: red;
                 }
- 
+
                 display: inline-block;
                 height: 3pc;
                 width: 3pc;
@@ -64,8 +68,7 @@
 
 .section .border-line {
     display: block;
-    margin-inline-start: auto;
-    margin-inline-end: auto;
+    margin-inline: auto;
     unicode-bidi: isolate;
     overflow: hidden;
     border-style: solid;

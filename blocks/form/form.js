@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+
 export async function decorate(block) {
   const formAnchor = block.querySelector('a[href$=".json"]');
   const formURL = formAnchor ? formAnchor.href : 'https://main--eds-training--eds-kunal.hlx.page/registration-form.json';
@@ -97,27 +99,27 @@ export async function decorate(block) {
       fieldWrapper.className = 'field-wrapper';
 
       switch (fd.Type) {
-        case 'select':
-          fieldWrapper.append(createLabel(fd));
-          fieldWrapper.append(createSelect(fd));
-          break;
-        case 'text-area':
-          fieldWrapper.append(createLabel(fd));
-          fieldWrapper.append(createTextArea(fd));
-          break;
-        case 'checkbox':
-          fieldWrapper.append(createInput(fd));
-          fieldWrapper.append(createLabel(fd));
-          break;
-        case 'plaintext':
-          fieldWrapper.append(createHeading(fd, 'h4'));
-          break;
-        case 'submit':
-          fieldWrapper.append(createButton(fd));
-          break;
-        default:
-          fieldWrapper.append(createLabel(fd));
-          fieldWrapper.append(createInput(fd));
+      case 'select':
+        fieldWrapper.append(createLabel(fd));
+        fieldWrapper.append(createSelect(fd));
+        break;
+      case 'text-area':
+        fieldWrapper.append(createLabel(fd));
+        fieldWrapper.append(createTextArea(fd));
+        break;
+      case 'checkbox':
+        fieldWrapper.append(createInput(fd));
+        fieldWrapper.append(createLabel(fd));
+        break;
+      case 'plaintext':
+        fieldWrapper.append(createHeading(fd, 'h4'));
+        break;
+      case 'submit':
+        fieldWrapper.append(createButton(fd));
+        break;
+      default:
+        fieldWrapper.append(createLabel(fd));
+        fieldWrapper.append(createInput(fd));
       }
       form.append(fieldWrapper);
     });

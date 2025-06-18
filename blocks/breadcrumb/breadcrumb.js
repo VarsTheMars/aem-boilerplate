@@ -1,10 +1,9 @@
 import ffetch from '../../scripts/ffetch.js';
 import { createElementWithClasses } from '../../scripts/utils.js';
 
-
 function generatePathArray(path) {
   const parts = path.split('/');
-  let pathArray = [];
+  const pathArray = [];
   let currentPath = '';
 
   parts.forEach((part) => {
@@ -15,9 +14,7 @@ function generatePathArray(path) {
   });
 
   return pathArray;
-
 }
-
 
 async function getItems() {
   let itemPaths = generatePathArray(window.location.pathname);
@@ -29,7 +26,7 @@ async function getItems() {
   const items = itemPaths.map((itemPath) => {
     // get the title from the pages, based on its path
     const page = pages.find((entry) => entry.path === itemPath);
-    let title = page && page.title !== '' ? page.title : page.title;
+    const title = page && page.title !== '' ? page.title : page.title;
     return {
       title,
       url: `${itemPath}`,
@@ -38,7 +35,6 @@ async function getItems() {
 
   return items;
 }
-
 
 export default async function decorate(block) {
   const breadcrumbs = createElementWithClasses('nav');
@@ -64,7 +60,6 @@ export default async function decorate(block) {
       return li;
     }),
   );
-
 
   breadcrumbs.append(ol);
   block.append(breadcrumbs);

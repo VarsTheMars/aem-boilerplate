@@ -1,3 +1,5 @@
+/* stylelint-disable selector-class-pattern */
+
 .section.article-list-container {
     padding:0 14px;
 
@@ -16,11 +18,13 @@
         > .block.article-list {
             > ul {
                 padding:0;
+
                 > li {
                     text-align: left;
                     margin-bottom: 18px;
                     width:100%;
                     list-style: none;
+
                     > a {
                         width:100%;
                         max-width: 600px;
@@ -29,6 +33,7 @@
                         font-weight: 400;
                         height:90pt;
                         padding:8px 16px;
+
                         > .pageTitle {
                             display: inline-block;
                             font-size: 18px;

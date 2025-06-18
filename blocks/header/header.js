@@ -1,3 +1,7 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-plusplus */
+/* eslint-disable no-shadow */
+
 import { getMetadata } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
 
@@ -102,7 +106,6 @@ function togglesMenu(utility, lang, forceExpanded = null) {
   }
 }
 
-
 /**
  * loads and decorates the header, mainly the nav
  * @param {Element} block The header block element
@@ -141,7 +144,6 @@ export default async function decorate(block) {
   anchorBrandNode.href = '/';
   anchorBrandNode.append(brandImg);
   navBrand.firstElementChild.append(anchorBrandNode);
-
 
   const navSections = nav.querySelector('.nav-sections');
   if (navSections) {
@@ -182,7 +184,6 @@ export default async function decorate(block) {
 
   regForm.firstElementChild.style.display = 'none';
 
-
   const utility = document.createElement('div');
   utility.append(fragment.lastElementChild);
   utility.id = 'utility';
@@ -196,14 +197,12 @@ export default async function decorate(block) {
   signin.addEventListener('click', (event) => {
     event.stopPropagation();
     if (isDesktop.matches) {
-      regForm.firstElementChild.style.display =
-        regForm.firstElementChild.style.display === 'block' ? 'none' : 'block';
+      regForm.firstElementChild.style.display = regForm.firstElementChild.style.display === 'block' ? 'none' : 'block';
     }
   });
   const lang = navUtility.querySelector('ul');
   if (lang) {
     lang.parentElement.className = 'lang-nav';
-
   }
   if (lang) {
     lang.querySelectorAll('.lang-nav > ul > li').forEach((language) => {
@@ -213,20 +212,17 @@ export default async function decorate(block) {
           const expanded = language.getAttribute('aria-expanded') === 'true';
           toggleAlllangSections(lang);
           language.setAttribute('aria-expanded', expanded ? 'false' : 'true');
-
         }
       });
     });
   }
   window.addEventListener('click', (event) => {
     if (regForm.firstElementChild.style.display === 'block' && !regForm.contains(event.target)) {
-
       regForm.firstElementChild.style.display = 'none';
     }
     const isExpanded = lang.firstElementChild.getAttribute('aria-expanded') === 'true';
     if (isExpanded && !lang.firstElementChild.contains(event.target)) {
       lang.firstElementChild.setAttribute('aria-expanded', 'false');
-
     }
   });
   window.addEventListener('scroll', () => {
@@ -239,11 +235,11 @@ export default async function decorate(block) {
     }
   });
 
-  //nav-tools
+  // nav-tools
   const searchBox = nav.querySelector('.nav-tools');
   const searchContainer = document.createElement('div');
   searchContainer.classList.add('search-container');
-  searchContainer.innerHTML = `<form action="https://www.google.com/search" method="get"><input type="text" name="q" placeholder="SEARCH" required></form>`
+  searchContainer.innerHTML = '<form action="https://www.google.com/search" method="get"><input type="text" name="q" placeholder="SEARCH" required></form>';
   searchBox.append(searchContainer);
 
   block.prepend(utility);

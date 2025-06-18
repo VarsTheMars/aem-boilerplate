@@ -1,10 +1,12 @@
+/* stylelint-disable keyframes-name-pattern */
+/* stylelint-disable selector-class-pattern */
+
 @keyframes fadeIn { 
-    0% {  
-        opacity: 0; 
+    0% { 
         opacity: 0; 
     }  
-    100% {  
-        opacity: 1; 
+
+    100% { 
         opacity: 1; 
     }  
 }
@@ -12,6 +14,7 @@
 .section.carousel-container {
     z-index: -1;
     margin-bottom: 50px;
+
     > .carousel-wrapper {
         max-width:2000px !important;
 
@@ -21,19 +24,22 @@
                 animation-duration: 0.5s; 
                 animation-fill-mode: both; 
                 animation-name: fadeIn; 
+
                 > div:first-child {
                     height:15pc;
+
                     @media (width>=768px){
                         height:20pc;
                     }
+
                     @media (width>=1165px){
                         height:40pc;
                         max-height:40pc;
                     }
 
                     width:100%;
-                    > picture {
 
+                    > picture {
                         > img {
                             height: 100%;
                             margin-bottom: 0;
@@ -54,9 +60,11 @@
                     padding: 0 14px;
                     height:20pc;
                     overflow: hidden;
+
                     @media (width>=768px){
                         height:15pc;
                     }
+
                     @media (width>=1165px){
                         height: 180px;
                         margin-top: -160px;
@@ -94,12 +102,14 @@
             > .carousel-active , > .button-container {
                 display:block;
             }
+
             > .button-action-container {
                 display: flex;
                 gap: 1px;
                 float: right;
                 position: relative;
                 margin-top: -40px;
+
                 span:last-child{
                 display: none !important;}
                
@@ -109,7 +119,7 @@
                     background: none;
                     border: none;
                     cursor: pointer;
-                    padding: 0px;
+                    padding: 0;
                     display: flex;
                     align-items: center;
                     color: black;
@@ -140,20 +150,16 @@
                  
               }
 
-            >ul{
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                margin: 0;
-                padding: 0;
-                list-style: none;  
+            >ul{  
                 cursor: pointer;
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: left;
+
                 @media (width>=768px){
                     justify-content: center;
                 }
+
                 list-style: none;
                 margin: 0.5em 0 0;
                 padding: 0;
@@ -166,10 +172,11 @@
                     border-radius: 50%;
                     font-size: 0;
                     text-indent: -3000px;
-                    background-color: rgba(0,0,0,0.5);
+                    background-color: rgb(0 0 0 / 50%);
                 }
+
                 .list-active{
-                    background-color: rgba(0,0,0,0.8);
+                    background-color: rgb(0 0 0 / 80%);
                 }
             
             }
@@ -179,6 +186,7 @@
            @media (width>=0px){
             height:23pc;
            }
+
            @media (width>=560px){
             height:15pc;
            }

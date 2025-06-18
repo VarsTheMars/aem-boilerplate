@@ -7,21 +7,19 @@
     gap:14px;
 
     @media (width>=768px){
-        flex-direction: row;
-        flex-wrap: wrap;
+        flex-flow: row wrap;
         justify-content:start;
     }
 
     @media (width>=1200px){
-        flex-direction: row;
-        flex-wrap:wrap;
+        flex-flow: row wrap;
         justify-content: start;
     }
 
     > div {
-       
         > div:first-child > p {
-            margin-bottom:0px;
+            margin-bottom:0;
+
             > a > picture {
                 >img {
                     all:unset;
@@ -35,6 +33,7 @@
         >div:last-child {
             >.button-container {
                 margin-top:0;
+
                 > a {
                     all:unset;
                     color: #202020;
@@ -69,6 +68,7 @@
     
 
 } 
+
 /* .article-cards-container .default-content-wrapper {
 
     > .button-container {
@@ -78,10 +78,8 @@
 
  .border-line {
     display: block;
-    margin-block-start: 0.5em;
-    margin-block-end: 0.5em;
-    margin-inline-start: auto;
-    margin-inline-end: auto;
+    margin-block: 0.5em;
+    margin-inline: auto;
     unicode-bidi: isolate;
     overflow: hidden;
     border-style: solid;

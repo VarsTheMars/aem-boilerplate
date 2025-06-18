@@ -1,3 +1,5 @@
+/* stylelint-disable custom-property-pattern */
+
 /*
  * Copyright 2020 Adobe. All rights reserved.
  * This file is licensed to you under the Apache License, Version 2.0 (the "License");
@@ -87,10 +89,15 @@ h6 {
 }
 
 h1 { font-size: var(--heading-font-size-xxl); }
+
 h2 { font-size: var(--heading-font-size-xl); }
+
 h3 { font-size: var(--heading-font-size-l); }
+
 h4 { font-size: var(--heading-font-size-m); }
+
 h5 { font-size: var(--heading-font-size-s); }
+
 h6 { font-size: var(--heading-font-size-xs); }
 
 
@@ -135,8 +142,7 @@ button {
   background-color: var(--link-color);
   margin: 16px 0;
   white-space: nowrap;
-  overflow: hidden;
-  border:none;  
+  overflow: hidden; 
 }
 
 a.button:hover,
@@ -147,7 +153,23 @@ button:focus {
   cursor: pointer;
 }
 
-button:disabled,
+button:disabled {
+  background-color: var(--light-color);
+  cursor: unset;
+}
+
+.button-container {
+  > em > a {
+      font-size:14px;
+      font-weight: 600;
+  }
+
+  > em > a:link, > em > button {
+      background-color: #FFEA00;
+      padding:14px 35px;   
+  }
+}
+
 button:disabled:hover {
   background-color: var(--light-color);
   cursor: unset;
@@ -156,7 +178,6 @@ button:disabled:hover {
 a.button.secondary,
 button.secondary {
   background-color: unset;
-  border: 2px solid currentcolor;
   color: var(--text-color);
   border: none;
 }
@@ -192,26 +213,16 @@ main .section.highlight {
   background-color: beige;
 }
 
-.button-container {
-  > em > a {
-      font-size:14px;
-      font-weight: 600;
-  }
 
-  > em > a:link, > em > button {
-      background-color: #FFEA00;
-      padding:14px 35px;   
-  }
-
-
-}
 
 main {
   padding-top:160px !important;
 }
+
 ol {
   padding-inline-start:10px;
 }
+
 @media (width>=768px){
   ol {
     padding-inline-start:40px;
@@ -229,9 +240,10 @@ ol {
   font-weight: normal;
   justify-content: center;
   margin:27px 14px 13.5px;
-  padding: 8px 0px 16px;
+  padding: 8px 0 16px;
  
 }
+
 .default-content-wrapper > p {
    margin-left: 14px;
 }
@@ -249,6 +261,7 @@ ol {
 /* Magazine Page */
 main:has(.section.magazine-image) {
   padding: 0 14px;
+
   > .section.magazine-image {
     > .default-content-wrapper {
       > picture {
@@ -270,9 +283,11 @@ main:has(.section.magazine-image) {
         margin-top: 27px;
         font-size:40px;
       }
+
       >h2:first-child::before{
         border-bottom: none;
       }
+
       > p{
         font-size:18px;
         line-height: 2.5;
@@ -290,14 +305,17 @@ main:has(.section.magazine-image) {
     display:flex;
     flex-wrap:wrap
   }
+
   .section.magazine-image {
     flex:0 0 100%;
   }
+
   .section.magazine-text{
     flex: 0 0 66%;
     padding-right:60px;
     padding-left:40px;
   }
+
   .section.magazine-list{
     flex:0 1 20%
   }

@@ -1,5 +1,5 @@
 export default function decorate(block) {
-    const horizontalLine = document.createElement('hr');
-    horizontalLine.classList.add('border-line');
-    block.querySelector('div').parentElement.parentElement.prepend(horizontalLine);
+  const horizontalLine = document.createElement('hr');
+  horizontalLine.classList.add('border-line');
+  block.querySelector('div').parentElement.parentElement.prepend(horizontalLine);
 }

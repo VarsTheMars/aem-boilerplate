@@ -1,3 +1,5 @@
+/* eslint-disable eqeqeq */
+
 async function getQueryIndexJson(jsonURL, val) {
   let pathname = null;
   if (val) {
@@ -23,7 +25,7 @@ function getDate(page) {
     weekday: 'long',
     day: '2-digit',
     month: 'short',
-    year: 'numeric'
+    year: 'numeric',
   };
 
   const formattedDate = new Intl.DateTimeFormat('en-US', options).format(date);
@@ -36,7 +38,7 @@ function getDate(page) {
 function createHTMLForBlock(json) {
   const unorderedList = document.createElement('ul');
   const allListItems = [];
-  json.forEach(page => {
+  json.forEach((page) => {
     if (page.path.startsWith('/magazine/') && page.path != '/magazine/') {
       const listItem = document.createElement('li');
       const anchorTag = document.createElement('a');
@@ -51,7 +53,7 @@ function createHTMLForBlock(json) {
       anchorTag.append(titleSpan);
       anchorTag.append(dateSpan);
 
-      anchorTag.href = 'https://main--capstone--shravanibachu.hlx.live' + page.path;
+      anchorTag.href = `https://main--capstone--shravanibachu.hlx.live${page.path}`;
 
       listItem.append(anchorTag);
       allListItems.push(listItem);
@@ -64,7 +66,7 @@ function createHTMLForBlock(json) {
   };
 
   allListItems.sort((a, b) => extractDate(b) - extractDate(a));
-  allListItems.forEach(item => {
+  allListItems.forEach((item) => {
     unorderedList.append(item);
   });
   return unorderedList;

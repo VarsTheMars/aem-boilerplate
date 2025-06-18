@@ -1,3 +1,5 @@
+/* stylelint-disable custom-property-pattern */
+
 .section.article-featured-container > .article-featured-wrapper > .article-featured.block {
     font-family: "Source Sans pro", "Helvetica Neue", Helvetica, Arial, sans-serif; 
     margin:20px;  
@@ -61,7 +63,7 @@
 }
 
 .section.article-featured-container h1 {
-    font-family: "Asar", Georgia, "Times New Roman", Times, serif;
+    font-family: Asar, Georgia, "Times New Roman", Times, serif;
     font-weight: var(--fontWeightNormal, normal) !important;
     margin-bottom: 13.5px !important;
     margin-top: 13.5px !important;

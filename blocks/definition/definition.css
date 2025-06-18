@@ -1,3 +1,7 @@
+/* stylelint-disable custom-property-pattern */
+/* stylelint-disable font-family-no-missing-generic-family-keyword */
+
+
 .section.definition-container {
     float: left;
     width: 100%;
@@ -12,17 +16,25 @@
         background-color: #ebebeb;
 
         div {
-            > div {
+            >div {
+                div:nth-child(2) {
+                    font-size: 18px;
+                    line-height: 2.5;
+                    margin: 0 0 13.5px;
+                    text-align: justify;
+                }
+
                 div:nth-child(1) {
-                    > p {
+                    >p {
                         margin: 0;
                     }
+
                     padding: 14px;
                     font-size: 36px;
                     margin: 0 0 13.5px;
                 }
 
-                div:nth-child(1):after {
+                div:nth-child(1)::after {
                     border-bottom: 2px solid var(--brandPrimary, #ffea00);
                     content: "";
                     display: block;
@@ -31,23 +43,16 @@
                     width: 5pc;
                 }
             }
-
-            div:nth-child(2) {
-                font-size: 18px;
-                line-height: 2.5;
-                margin: 0 0 13.5px;
-                text-align: justify;
-            }
         }
     }
 
     .not-a-quote {
-        font-weight:600;
-        font-family: 'Asar';
+        font-weight: 600;
+        font-family: Asar;
 
-        @media (width>1024px){
-            p{
-                width:22ch;
+        @media (width>1024px) {
+            p {
+                width: 22ch;
             }
         }
     }
